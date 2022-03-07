@@ -1,6 +1,5 @@
 package com.aula04.banco.banco.dto;
 
-
 import com.aula04.banco.banco.model.Cliente;
 import com.aula04.banco.banco.model.Conta;
 import lombok.AllArgsConstructor;
@@ -20,14 +19,14 @@ public class ResponseCliente {
     private String email;
     private List<Conta> contas;
 
-    public ResponseCliente(Cliente cliente){
+    public ResponseCliente(Cliente cliente) {
         this.id = cliente.getId();
         this.nome = cliente.getNome();
         this.email = cliente.getEmail();
         this.contas = cliente.getContas();
     }
 
-    public static List<ResponseCliente> toResponse(List<Cliente> clientes){
-        return  clientes.stream().map(ResponseCliente::new).collect(Collectors.toList());
+    public static List<ResponseCliente> toResponse(List<Cliente> clientes) {
+        return clientes.stream().map(ResponseCliente::new).collect(Collectors.toList());
     }
 }

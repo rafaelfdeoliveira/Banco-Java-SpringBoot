@@ -14,10 +14,10 @@ public class CPFValidador implements ConstraintValidator<CPF, String> {
     public boolean isValid(String cpf, ConstraintValidatorContext context) {
         String cpfSomenteDigitos = cpf.replaceAll("\\D", "");
 
-        if(cpfSomenteDigitos == null ||
-                cpfSomenteDigitos.length() != 11 ||
-                cpfSomenteDigitos.equals("00000000000") ||
-                cpfSomenteDigitos.equals("11111111111")){return  false;}
+        if (cpfSomenteDigitos == null
+                || cpfSomenteDigitos.length() != 11
+                || cpfSomenteDigitos.equals("00000000000")
+                || cpfSomenteDigitos.equals("11111111111")) {return false;}
         return true;
     }
 }

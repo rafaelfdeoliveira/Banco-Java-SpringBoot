@@ -8,5 +8,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ErroValidacao {
     private String campo;
-    private String messagem;
+    private String mensagem;
 }
