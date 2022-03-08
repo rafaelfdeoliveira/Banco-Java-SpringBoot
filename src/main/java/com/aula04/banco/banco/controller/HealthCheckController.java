@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HealthCheckController {
 
     @GetMapping("/health-check")
-    @ResponseBody
+    @ResponseBody()
     public String healthCheck(){
         return "Server running!";
     }
