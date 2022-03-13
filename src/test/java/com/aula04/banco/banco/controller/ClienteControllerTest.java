@@ -16,11 +16,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ClienteControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
+    MockMvc mockvMvc;
 
     @Test
     void cadastraClienteComSucesso() throws Exception {
-        mockMvc.perform(
+        mockvMvc.perform(
                 MockMvcRequestBuilders
                         .post("/cliente")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -30,10 +30,10 @@ public class ClienteControllerTest {
                                 "\t\"senha\":\"432423\",\n" +
                                 "\t\"cpf\":\"22222222222\",\n" +
                                 "\t\"agencia\":323\n" +
-                                "}"))
-                .andExpect(status().isCreated())
+                                "}")
+                ).andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").isNotEmpty())
-                .andExpect(jsonPath("$.email").value(true))
+                .andExpect(jsonPath("$.email").value("cinrhiaqteste@hotmail.com"))
                 .andExpect(jsonPath("$.active").doesNotExist());
     }
 }
